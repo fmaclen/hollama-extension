@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Hollama Extension",
+  "version": "1.0.0",
+  "author": "fmaclen",
+  "description": "Tools for extracting and manipulating text for LLM workflows",
+  "icons": {
+    "48": "favicon.png",
+    "128": "favicon.png"
+  },
+  "action": {
+    "default_icon": "favicon.png",
+    "default_title": "Hollama",
+    "default_popup": "index.html"
+  }
+}
