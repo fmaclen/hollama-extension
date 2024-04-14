@@ -1,19 +1,23 @@
 <script lang="ts">
-	let extractedText = '';
-
+  import { Readability } from '@mozilla/readability';
+  
+  let extractedText = '';
+  
 	async function extractText() {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const doc = document.implementation.createHTMLDocument();
+		let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-    if (tab.id) {
-      const html = await chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        func: () => {
-          return document.body.innerHTML;
-        },
-      });
+		if (tab.id) {
+			const pageContent = await chrome.scripting.executeScript({
+				target: { tabId: tab.id },
+				func: () => {
+					return document.body.innerHTML;
+				}
+			});
+      doc.body.innerHTML = pageContent[0].result || '';
+		}
 
-      extractedText = html[0].result || '';
-    }
+    extractedText = new Readability(doc).parse()?.textContent || '';
 	}
 
 	function copyText() {
