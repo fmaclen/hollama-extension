@@ -17,7 +17,7 @@
 			doc.body.innerHTML = pageContent[0].result || '';
 		}
 
-		extractedText = new Readability(doc).parse()?.textContent || '';
+		extractedText = new Readability(doc).parse()?.textContent.trim() || '';
 	}
 
 	function copyText() {
