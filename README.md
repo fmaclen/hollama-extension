@@ -1,18 +1,9 @@
-# create-svelte
+# Hollama: Chrome Extension
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Tools for extracting and manipulating text for LLM workflows
 
-## Creating a project
+![image](https://github.com/fmaclen/hollama-extension/assets/1434675/59a5d969-8788-4658-a104-7f06a3f65814)
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
 ## Developing
 
