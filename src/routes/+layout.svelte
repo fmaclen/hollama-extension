@@ -3,14 +3,11 @@
 </script>
 
 <div class="layout">
-	<main>
-		<slot />
-	</main>
+	<slot />
+
 	<aside class="aside">
-		<a href="https://hollama.fernando.is">
-			<img src="favicon.png" alt="Hollama" />
-			<h1>Hollama</h1>
-		</a>
+		<img src="favicon.png" alt="Hollama logo" />
+		<h1>Hollama</h1>
 	</aside>
 </div>
 
@@ -23,31 +20,23 @@
 	.layout {
 		display: flex;
 		height: 100%;
+		width: max-content;
 	}
 
 	.aside {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: center;
+		row-gap: var(--size-6);
+		color: var(--gray-800);
 		border-left: var(--border-size-1) solid var(--gray-3);
-
-		a {
-      height: 100%;
-			display: flex;
-			justify-content: space-between;
-      box-sizing: border-box;
-			flex-direction: column;
-			align-items: center;
-      row-gap: var(--size-6);
-			padding-block: var(--size-3);
-			color: var(--gray-800);
-			text-decoration: none;
-
-			&:hover {
-				background-color: var(--gray-1);
-			}
-		}
-
+		
 		img {
-			width: 48px;
-			height: 48px;
+			display: block;
+			padding: var(--size-3);
+			width: 40px;
+			height: 40px;
 		}
 
 		h1 {
@@ -57,6 +46,7 @@
 			line-height: 7ch;
 			transform: rotate(270deg);
 			margin: unset;
+			padding-block: var(--size-2);
 		}
 	}
 </style>

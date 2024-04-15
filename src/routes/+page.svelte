@@ -40,9 +40,7 @@
 		<button class="button button--primary" on:click={extractText}>Extract</button>
 	</nav>
 
-	<textarea class="preview" disabled placeholder="Click 'Extract' to read the text from the page.">
-		{extractedText}
-	</textarea>
+	<textarea class="preview" disabled placeholder="Click 'Extract' to read the text from the page." value={extractedText} />
 
 	<nav class="nav">
 		<button class="button" on:click={copyText}>Copy</button>
